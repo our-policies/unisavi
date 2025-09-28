@@ -1,500 +1,690 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy & Cookie Policy - UniSavi</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
 
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border-radius: 16px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid #f1f3f4;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        letter-spacing: -0.5px;
+      }
+
+      .welcome-text {
+        font-size: 1.15rem;
+        color: #5f6368;
+        line-height: 1.7;
+        max-width: 700px;
+        margin: 0 auto;
+        font-weight: 400;
+      }
+
+      .section {
+        margin-bottom: 40px;
+        padding: 30px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 12px;
+        border: 1px solid #e9ecef;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .section:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        border-color: #667eea;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .section-number {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-right: 15px;
+        flex-shrink: 0;
+        box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+      }
+
+      .section-description {
+        color: #4a5568;
+        margin-bottom: 20px;
+        white-space: pre-line;
+        line-height: 1.8;
+        font-size: 1.05rem;
+      }
+
+      .points-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 15px;
+      }
+
+      .points-list li {
+        padding: 12px 0;
+        padding-left: 30px;
+        position: relative;
+        color: #4a5568;
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      .normal-point-list {
+        padding-left: 30px;
+      }
+      .normal-point-list li {
+        padding: 6px 0;
+      }
+
+      .points-list li:before {
+        content: "🔒";
+        position: absolute;
+        left: 0;
+        font-size: 1.2rem;
+      }
+
+      .contact-email {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        padding: 2px 6px;
+        border-radius: 4px;
+        background: rgba(102, 126, 234, 0.1);
+      }
+
+      .contact-email:hover {
+        color: #5a67d8;
+        background: rgba(102, 126, 234, 0.2);
+        transform: scale(1.05);
+      }
+
+      .highlight {
+        background: linear-gradient(120deg, #ffd89b 0%, #19547b 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 600;
+      }
+
+      .security-badge {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #48bb78, #38a169);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin: 0 4px;
+      }
+
+      .security-badge::before {
+        content: "🛡️";
+        margin-right: 5px;
+      }
+
+      .cookie-info {
+        background: linear-gradient(135deg, #fed7d7, #feb2b2);
+        border: 1px solid #fc8181;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 15px 0;
+      }
+
+      .cookie-info strong {
+        color: #c53030;
+      }
+
+      .tos-info {
+        background: linear-gradient(135deg, #e6fffa, #b2f5ea);
+        border: 1px solid #4fd1c7;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 15px 0;
+        text-align: center;
+      }
+
+      .tos-info strong {
+        color: #234e52;
+      }
+
+      .tos-link {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      }
+
+      .tos-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+        color: white;
+      }
+
+      .tos-link::before {
+        content: "📋";
+        margin-right: 8px;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 2px solid #e2e8f0;
+        color: #718096;
+        position: relative;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+      }
+
+      .last-updated {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            border-radius: 16px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #f1f3f4;
+          margin: 10px;
+          padding: 25px 15px;
         }
 
         h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .welcome-text {
-            font-size: 1.15rem;
-            color: #5f6368;
-            line-height: 1.7;
-            max-width: 700px;
-            margin: 0 auto;
-            font-weight: 400;
+          font-size: 2.2rem;
         }
 
         .section {
-            margin-bottom: 40px;
-            padding: 30px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 12px;
-            border: 1px solid #e9ecef;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
-            border-color: #667eea;
+          padding: 25px 20px;
         }
 
         .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
+          font-size: 1.3rem;
         }
 
         .section-number {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            font-weight: 700;
-            margin-right: 15px;
-            flex-shrink: 0;
-            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+          width: 30px;
+          height: 30px;
+          font-size: 0.9rem;
         }
+      }
 
-        .section-description {
-            color: #4a5568;
-            margin-bottom: 20px;
-            white-space: pre-line;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
+      .data-types {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin: 20px 0;
+      }
 
-        .points-list {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 15px;
-        }
+      .data-type {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #667eea;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
 
-        .points-list li {
-            padding: 12px 0;
-            padding-left: 30px;
-            position: relative;
-            color: #4a5568;
-            font-size: 1.05rem;
-            line-height: 1.6;
-        }
+      .data-type h4 {
+        color: #667eea;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
 
-        .points-list li:before {
-            content: "🔒";
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
+      .rights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin: 20px 0;
+      }
 
-        .contact-email {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            padding: 2px 6px;
-            border-radius: 4px;
-            background: rgba(102, 126, 234, 0.1);
-        }
+      .right-item {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-top: 3px solid #667eea;
+      }
 
-        .contact-email:hover {
-            color: #5a67d8;
-            background: rgba(102, 126, 234, 0.2);
-            transform: scale(1.05);
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, #ffd89b 0%, #19547b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 600;
-        }
-
-        .security-badge {
-            display: inline-flex;
-            align-items: center;
-            background: linear-gradient(135deg, #48bb78, #38a169);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin: 0 4px;
-        }
-
-        .security-badge::before {
-            content: "🛡️";
-            margin-right: 5px;
-        }
-
-        .cookie-info {
-            background: linear-gradient(135deg, #fed7d7, #feb2b2);
-            border: 1px solid #fc8181;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-
-        .cookie-info strong {
-            color: #c53030;
-        }
-
-        .tos-info {
-            background: linear-gradient(135deg, #e6fffa, #b2f5ea);
-            border: 1px solid #4fd1c7;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
-            text-align: center;
-        }
-
-        .tos-info strong {
-            color: #234e52;
-        }
-
-        .tos-link {
-            display: inline-flex;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-        }
-
-        .tos-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
-            color: white;
-        }
-
-        .tos-link::before {
-            content: "📋";
-            margin-right: 8px;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid #e2e8f0;
-            color: #718096;
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-
-        .last-updated {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 25px 15px;
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .section {
-                padding: 25px 20px;
-            }
-
-            .section-title {
-                font-size: 1.3rem;
-            }
-
-            .section-number {
-                width: 30px;
-                height: 30px;
-                font-size: 0.9rem;
-            }
-        }
-
-        .data-types {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .data-type {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .data-type h4 {
-            color: #667eea;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .rights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .right-item {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-top: 3px solid #667eea;
-        }
-
-        .right-item::before {
-            content: "⚖️";
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            display: block;
-        }
+      .right-item::before {
+        content: "⚖️";
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        display: block;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <h1>Privacy & Cookie Policy</h1>
-            <div class="welcome-text">
-                At UniSavi, your privacy is important to us. This policy explains how we collect, use, and protect your personal information, as well as how we use cookies to enhance your experience.
-            </div>
+      <div class="header">
+        <h1>Privacy & Cookie Policy</h1>
+        <div class="welcome-text">
+          At UniSavi, your privacy is important to us. This policy explains how
+          UniSavi Ltd (UK), together with its subsidiary UniSavi EdTech Ltd
+          (Nigeria), collects, uses, and protects your personal information, as
+          well as how we use cookies to enhance your experience.
         </div>
+      </div>
 
-        <div class="section">
-            <h2 class="section-title">
-                <span class="section-number">1</span>
-                Information We Collect
-            </h2>
-            <div class="section-description">
-                We collect information to help you plan and manage your payments securely:
-            </div>
-            <div class="data-types">
-                <div class="data-type">
-                    <h4>👤 Personal Info</h4>
-                    <p>Name, email, phone number, nationality, and education details</p>
-                </div>
-                <div class="data-type">
-                    <h4>💳 Payment Info</h4>
-                    <p>Transaction details (amount, purpose, payment status), but not your bank or card credentials</p>
-                </div>
-                <div class="data-type">
-                    <h4>📄 Uploaded Files</h4>
-                    <p>Documents like payment confirmations, offer letters, and receipts</p>
-                </div>
-                <div class="data-type">
-                    <h4>📊 Usage Data</h4>
-                    <p>App activity, saved goals, login history, etc.</p>
-                </div>
-            </div>
+      <!-- Introduction  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">1</span>
+          Introduction
+        </h2>
+        <div class="section-description">
+          This Privacy & Cookie Policy explains how UniSavi Ltd (UK), together
+          with its subsidiary UniSavi EdTech Ltd (Nigeria), collects, uses, and
+          protects personal information through the UniSavi App.
         </div>
+      </div>
 
-        <div class="section">
-            <h2 class="section-title">
-                <span class="section-number">2</span>
-                How We Use Your Information
-            </h2>
-            <div class="section-description">
-                We use your data to:
-
-                • Manage your application and payment processes
-                • Send payment reminders and confirmations  
-                • Improve our services and provide customer support
-                • Comply with any legal or institutional obligations
-            </div>
+      <!-- Data We Collect  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">2</span>
+          Data We Collect
+        </h2>
+        <div class="section-description">
+          We may collect the following categories of personal data:
         </div>
-
-        <div class="section">
-            <h2 class="section-title">
-                <span class="section-number">3</span>
-                Third-Party Services
-            </h2>
-            <div class="section-description">
-                We work with trusted partners like <span class="highlight">Flutterwave</span> and <span class="highlight">Flywire</span> to process payments. These services have their own privacy policies. 
-                
-                <span class="security-badge">Secure Processing</span> We do not store or process your card or bank account details on UniSavi's servers.
-            </div>
+        <ul class="points-list">
+          <li>
+            <strong>Identity documents:</strong> passport, national ID, or other
+            proof of identity
+          </li>
+          <li><strong>Contact details:</strong> name, email, phone, address</li>
+          <li>
+            <strong>Application data:</strong> academic records, certificates,
+            references, supporting documents
+          </li>
+          <li>
+            <strong>Technical data:</strong> device type, IP address, browser
+            information, app usage statistics
+          </li>
+          <li>
+            <strong>Payment records:</strong> Transaction details, confirmation
+            of fees processed via third-party providers. We do not store credit
+            card or bank account details
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">2</span>
+          Data We Collect
+        </h2>
+        <div class="section-description">
+          We may collect the following categories of personal data:
         </div>
-
-        <div class="section">
-            <h2 class="section-title">
-                <span class="section-number">4</span>
-                Data Storage & Security
-            </h2>
-            <ul class="points-list">
-                <li>Your data is securely stored with modern encryption protocols</li>
-                <li>Access is restricted to authorized UniSavi staff only</li>
-                <li>We never sell your personal data to third parties</li>
-            </ul>
+        <div class="data-types">
+          <div class="data-type">
+            <h4>👤 Identity documents</h4>
+            <p>passport, national ID, or other proof of identity</p>
+          </div>
+          <div class="data-type">
+            <h4>📄 Contact details</h4>
+            <p>name, email, phone, address</p>
+          </div>
+          <div class="data-type">
+            <h4>📄 Application data</h4>
+            <p>
+              academic records, certificates, references, supporting documents
+            </p>
+          </div>
+          <div class="data-type">
+            <h4>📄 Technical data</h4>
+            <p>
+              device type, IP address, browser information, app usage statistics
+            </p>
+          </div>
+          <div class="data-type">
+            <h4>💳 Payment Info</h4>
+            <p>
+              Transaction details, confirmation of fees processed via
+              third-party providers. We do not store credit card or bank account
+              details
+            </p>
+          </div>
         </div>
+      </div> -->
 
-        <div class="section">
-            <h2 class="section-title">
-                <span class="section-number">5</span>
-                Cookie Policy
-            </h2>
-            <div class="section-description">
-                We use cookies (small files stored on your device) to:
+      <!-- How We Use Your Information  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">3</span>
+          How We Use Your Information
+        </h2>
+        <div class="section-description">Your data may be used to:</div>
+        <ul class="normal-point-list">
+          <li>Process and manage applications to educational institutions.</li>
+          <li>Provide student support and related services.</li>
+          <li>Comply with legal and regulatory requirements.</li>
+          <li>Improve the functionality of the App.</li>
+          <li>Communicate with you regarding your account and services.</li>
+        </ul>
+      </div>
 
-                • Keep you logged in
-                • Remember your preferences
-                • Understand how users interact with our app
-            </div>
-            <div class="cookie-info">
-                <strong>Cookie Control:</strong> You can control cookies through your browser or device settings.
-            </div>
+      <!-- Legal Basis for Processing  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">4</span>
+          Legal Basis for Processing
+        </h2>
+        <div class="section-description">
+          We process data on the following legal bases:
         </div>
+        <ul class="points-list">
+          <li>
+            <strong>Contractual necessity:</strong> To process your applications
+            and deliver services
+          </li>
+          <li>
+            <strong>Legal obligation:</strong> To comply with immigration, tax,
+            and reporting requirements
+          </li>
+          <li>
+            <strong>Consent:</strong> For marketing communications where
+            required
+          </li>
+          <li>
+            <strong>Legitimate interests:</strong> Service improvements, fraud
+            prevention
+          </li>
+        </ul>
+      </div>
 
-        <div class="section">
-            <h2 class="section-title">
-                <span class="section-number">6</span>
-                Your Rights
-            </h2>
-            <div class="section-description">
-                You have the right to:
-            </div>
-            <div class="rights-grid">
-                <div class="right-item">
-                    <strong>Access & Update</strong><br>
-                    Access or update your personal information
-                </div>
-                <div class="right-item">
-                    <strong>Data Deletion</strong><br>
-                    Request deletion of your data
-                </div>
-                <div class="right-item">
-                    <strong>Withdraw Consent</strong><br>
-                    Withdraw consent to data usage
-                </div>
-                <div class="right-item">
-                    <strong>Data Portability</strong><br>
-                    Request a copy of the data we store
-                </div>
-            </div>
-            <div class="section-description">
-                To exercise these rights, contact us at:
-            </div>
-            <ul class="points-list">
-                <li><a href="mailto:support@unisavi.com" class="contact-email">support@unisavi.com</a></li>
-            </ul>
+      <!-- Data Storage, Security & International Transfers  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">5</span>
+          Data Storage, Security & International Transfers
+        </h2>
+        <ul class="points-list">
+          <li>Data is primarily stored and processed in Nigeria.</li>
+          <li>
+            Data may be transferred to the UK and other jurisdictions where
+            UniSavi's partners or service providers operate.
+          </li>
+          <li>
+            Where data is transferred internationally, appropriate safeguards
+            (such as contractual clauses) are applied.
+          </li>
+          <li>
+            Payments made through the App are processed via secure third-party
+            providers (e.g., Flutterwave, Flywire). UniSavi does not collect or
+            store card or bank details.
+          </li>
+          <li>
+            Transaction records may include tax information (such as VAT or DST
+            charged) as required for compliance with local tax laws in Nigeria,
+            Ghana, Kenya, or other applicable jurisdictions. These records are
+            retained only for the period necessary to meet legal and accounting
+            obligations.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Security  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">6</span>
+          Security
+        </h2>
+        <ul class="points-list">
+          <li>
+            We use industry-standard security measures, including encryption,
+            restricted access, and secure servers.
+          </li>
+          <li>We do not sell personal data.</li>
+        </ul>
+      </div>
+      <!-- Cookie Policy  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">7</span>
+          Cookies
+        </h2>
+        <div class="section-description">
+          The App and its web integrations may use cookies or tracking
+          technologies to improve user experience.
         </div>
-
-        <div class="section">
-            <h2 class="section-title">
-                <span class="section-number">7</span>
-                Terms of Service
-            </h2>
-            <div class="section-description">
-                By using UniSavi, you agree to our Terms of Service, which outline your rights and responsibilities while using our platform.
-            </div>
-            <div class="tos-info">
-                <strong>Important:</strong> Please read our full Terms of Service to understand the complete terms and conditions of using UniSavi.
-                <br>
-                <a href="https://our-policies.github.io/unisavi/terms-of-service.html" class="tos-link" target="_blank" rel="noopener noreferrer">
-                    View Terms of Service
-                </a>
-            </div>
+        <ul class="normal-point-list">
+          <li>Essential cookies enable core functionality.</li>
+          <li>
+            Analytics cookies are used only with consent where required (EU/UK).
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">6</span>
+          Cookie Policy
+        </h2>
+        <div class="section-description">
+          The App and its web integrations may use cookies (small files stored
+          on your device) to: • Keep you logged in • Remember your preferences •
+          Understand how users interact with our app • Enable core functionality
         </div>
-
-        <div class="section">
-            <h2 class="section-title">
-                <span class="section-number">8</span>
-                Updates to This Policy
-            </h2>
-            <div class="section-description">
-                We may update this policy to reflect changes in laws or our services. Any changes will be posted in-app and on our website.
-
-                If you have any questions or concerns, feel free to reach out to us at:
-            </div>
-            <ul class="points-list">
-                <li><a href="mailto:support@unisavi.com" class="contact-email">support@unisavi.com</a></li>
-            </ul>
+        <div class="cookie-info">
+          <strong>Cookie Types:</strong> Essential cookies enable core
+          functionality, while analytics cookies are used only with consent
+          where required (EU/UK). <br /><strong>Cookie Control:</strong> You can
+          control cookies through your browser or device settings.
         </div>
+      </div> -->
 
-        <div class="footer">
-            <div class="last-updated">Last updated: September 24, 2025</div>
-            <p>&copy; 2025 UniSavi. All rights reserved.</p>
-            <p>Your privacy matters to us. We're committed to protecting your data.</p>
+      <!-- Children's Data  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">8</span>
+          Children’s Data
+        </h2>
+        <ul class="normal-point-list">
+          <li>The App is not directed at users under 16.</li>
+          <li>
+            Students aged 16–17 may only apply through the App with verified
+            parental/guardian consent wich mean we will request a consent
+            agreement.
+          </li>
+        </ul>
+      </div>
+      <!-- Your Rights  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">9</span>
+          Your Rights
+        </h2>
+        <div class="section-description">
+          Depending on your country of residence, you may have the right to:
         </div>
+        <div class="rights-grid">
+          <div class="right-item">
+            <strong>Access & Update</strong><br />
+            Access the personal data we hold about you.
+          </div>
+          <div class="right-item">
+            <strong>Data Deletion</strong><br />
+            Request correction or deletion.
+          </div>
+          <div class="right-item">
+            <strong>Withdraw Consent</strong><br />
+            Withdraw consent for non-essential processing.
+          </div>
+          <div class="right-item">
+            <strong>Data Portability</strong><br />
+            Request a copy of your data in portable format.
+          </div>
+        </div>
+        <div class="section-description">
+          Lodge a complaint with your local supervisory authority (e.g. NITDA –
+          Nigeria, Data Protection Commission – Ghana, ODPC – Kenya).
+        </div>
+      </div>
+
+      <!-- Updates to This Policy  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">10</span>
+          Updates
+        </h2>
+        <div class="section-description">
+          We may update this Privacy & Cookie Policy periodically. The latest
+          version will always be available within the App.
+        </div>
+      </div>
+
+      <!-- Contact Us  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">11</span>
+          Contact Us
+        </h2>
+        <div class="section-description">
+          For questions about this Privacy & Cookie Policy:
+        </div>
+        <div class="companies-grid">
+          <div class="company-info">
+            <h4>🇬🇧 UniSavi Ltd (UK)</h4>
+            <p>128 City Road, EC1V 2NX</p>
+            <p>
+              Email:
+              <a href="mailto:support@unisavi.com" class="contact-email"
+                >support@unisavi.com</a
+              >
+            </p>
+          </div>
+          <div class="company-info">
+            <h4>🇳🇬 UniSavi EdTech Ltd (Nigeria)</h4>
+            <p>Oba Akinloye Dr, Lekki, Eti-Osa 105102, Lagos</p>
+            <p>
+              Email:
+              <a href="mailto:support@unisavi.com" class="contact-email"
+                >support@unisavi.com</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terms of Service  -->
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-number">12</span>
+          Terms of Service
+        </h2>
+        <div class="section-description">
+          By using UniSavi, you agree to our Terms of Service, which outline
+          your rights and responsibilities while using our platform.
+        </div>
+        <div class="tos-info">
+          <strong>Important:</strong> Please read our full Terms of Service to
+          understand the complete terms and conditions of using UniSavi.
+          <br />
+          <a
+            href="https://our-policies.github.io/unisavi/terms-of-service.html"
+            class="tos-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Terms of Service
+          </a>
+        </div>
+      </div>
+
+      <!-- footer  -->
+      <div class="footer">
+        <div class="last-updated">Last updated: August 31, 2025</div>
+        <p>&copy; 2025 UniSavi. All rights reserved.</p>
+        <p>
+          Your privacy matters to us. We're committed to protecting your data.
+        </p>
+      </div>
     </div>
-</body>
+  </body>
 </html>
